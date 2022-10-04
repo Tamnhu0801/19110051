@@ -1,0 +1,50 @@
+<section class="htc__product__details bg__white" style="padding-top: 30px;">
+<!-- Start Product Details Top -->
+<div class="htc__product__details__top">
+    <div class="container">
+        <div class="row">
+                <div class="ht__product__dtl">
+                    <h2>{{post.title}}</h2>
+                </div>
+                <p class="">{{post.content}}</p>
+                <div class="detail-btn">
+                    <a class="del" href="http://localhost:5000/delete/{{post.id}}">Delete</a>
+                    <a class="edit" href="http://localhost:5000/edit/{{post.id}}">Edit</a>
+                </div>
+        </div>
+    </div>                   
+</div>
+<!-- End Product Details Top -->
+</section>
+<!-- End Product Details Area -->
+<!-- Start Product Description -->
+<section class="htc__produc__decription bg__white">
+<div class="container"> 
+    <div class="row">
+        <div class="pro__tab__content__inner">
+            <h4 class="ht__pro__title">Comments</h4>
+            <div class="col-xs-12">
+                <form id="contact-form" action="http://localhost:5000/{{post.id}}/addComment" method="post">
+                    <div class="single-contact-form">
+                        <div class="comment-box">
+                            <input type="text" name="comment" placeholder="Comment here...">
+                            <button type="submit" class="fv-btn">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="pro__tab__content__inner">
+            <div class="col-xs-12">
+                <ul class="comments">
+                    {{#each post.comments}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div> 
+    </div>
+</div>
+</section> 
